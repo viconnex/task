@@ -152,6 +152,11 @@ func Taskfile(readerNode *ReaderNode) (*taskfile.Taskfile, error) {
 		if err = taskfile.Merge(t, includedTaskfile, includedTask.Internal, namespace); err != nil {
 			return err
 		}
+
+		if includedTaskfile.Tasks["default"] != nil && t.Tasks[namespace] == nil {
+			t.Tasks[namespace] = includedTaskfile.Tasks["default"]
+		}
+
 		return nil
 	})
 	if err != nil {
