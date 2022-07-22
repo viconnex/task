@@ -154,7 +154,8 @@ func Taskfile(readerNode *ReaderNode) (*taskfile.Taskfile, error) {
 		}
 
 		if includedTaskfile.Tasks["default"] != nil && t.Tasks[namespace] == nil {
-			t.Tasks[namespace] = includedTaskfile.Tasks["default"]
+			t.Tasks[namespace] = &taskfile.Task{}
+			*t.Tasks[namespace] = *(includedTaskfile.Tasks["default"])
 		}
 
 		return nil
