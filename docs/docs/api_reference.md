@@ -133,6 +133,7 @@ includes:
 | `preconditions` | [`[]Precondition`](#precondition) | | List of commands to check if this task should run. The task errors otherwise. |
 | `vars` | [`map[string]Variable`](#variable) | | Task variables. |
 | `env` | [`map[string]Variable`](#variable) | | Task environment. |
+| `dotenv` | `[]string` | | A list of `.env` file paths to be parsed. |
 | `deps` | [`[]Dependency`](#dependency) | | List of dependencies of this task. |
 | `cmds` | [`[]Command`](#command) | | List of commands to be executed. |
 

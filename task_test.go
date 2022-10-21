@@ -1365,6 +1365,42 @@ func TestDotenvHasEnvVarInPath(t *testing.T) {
 	tt.Run(t)
 }
 
+func TestTaskDotenv(t *testing.T) {
+	tt := fileContentTest{
+		Dir:       "testdata/dotenv_task",
+		Target:    "dotenv",
+		TrimSpace: false,
+		Files: map[string]string{
+			"dotenv.txt": "foo\n",
+		},
+	}
+	tt.Run(t)
+}
+
+func TestTaskDotenvOverriddenByEnv(t *testing.T) {
+	tt := fileContentTest{
+		Dir:       "testdata/dotenv_task",
+		Target:    "dotenv-overridden-by-env",
+		TrimSpace: false,
+		Files: map[string]string{
+			"dotenv-overridden-by-env.txt": "overridden\n",
+		},
+	}
+	tt.Run(t)
+}
+
+func TestTaskDotenvWithVarName(t *testing.T) {
+	tt := fileContentTest{
+		Dir:       "testdata/dotenv_task",
+		Target:    "dotenv-with-var-name",
+		TrimSpace: false,
+		Files: map[string]string{
+			"dotenv-with-var-name.txt": "foo\n",
+		},
+	}
+	tt.Run(t)
+}
+
 func TestExitImmediately(t *testing.T) {
 	const dir = "testdata/exit_immediately"
 

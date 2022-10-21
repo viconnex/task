@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add task-level `dotenv` support ([#389](https://github.com/go-task/task/issues/389)).
+
 ## v3.17.0
 
 - Add a "Did you mean ...?" suggestion when a task does not exits another one
